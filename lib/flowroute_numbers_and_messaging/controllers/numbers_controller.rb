@@ -479,7 +479,7 @@ module FlowrouteNumbersAndMessaging
           }
         }
       }
-      puts(body.to_s)
+      Configuration.flowroute_logger.debug(body.to_s)
 
       # Prepare and execute HttpRequest.
       _request = @http_client.post(
@@ -490,8 +490,8 @@ module FlowrouteNumbersAndMessaging
 
       BasicAuth.apply(_request)
       _context = execute_request(_request)
-      puts(_context.response.status_code)
-      puts(_context.response.raw_body)
+      Configuration.flowroute_logger.debug(_context.response.status_code)
+      Configuration.flowroute_logger.debug(_context.response.raw_body)
 
       # Validate response against endpoint and global error codes.
       if _context.response.status_code == 401
