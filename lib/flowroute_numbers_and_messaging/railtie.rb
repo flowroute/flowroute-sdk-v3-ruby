@@ -4,6 +4,8 @@ require 'rails/railtie'
 
 module Lograge
   class Railtie < Rails::Railtie
-    ::FlowrouteNumbersAndMessaging::Configuration.flowroute_logger = config.logger
+    config.after_initialize do |app|
+      ::FlowrouteNumbersAndMessaging::Configuration.flowroute_logger = app.config.logger
+    end
   end
 end
