@@ -14,12 +14,15 @@ module FlowrouteNumbersAndMessaging
     # The password to use with basic authentication
     @basic_auth_password = 'TODO: Replace'
 
+    @flowroute_logger = Logger.new(STDOUT)
+
     # The attribute accessors for public properties.
     class << self
       attr_accessor :array_serialization
       attr_accessor :base_uri
       attr_accessor :basic_auth_user_name
       attr_accessor :basic_auth_password
+      attr_accessor :flowroute_logger
     end
   end
 end
