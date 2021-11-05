@@ -56,3 +56,5 @@ require_relative 'flowroute_numbers_and_messaging/controllers/routes_controller.
 require_relative 'flowroute_numbers_and_messaging/controllers/e911_controller.rb'
 require_relative 'flowroute_numbers_and_messaging/controllers/cnam_controller.rb'
 require_relative 'flowroute_numbers_and_messaging/controllers/portability_controller.rb'
+
+require_relative 'flowroute_numbers_and_messaging/railtie' if defined?(Rails)
